@@ -1,0 +1,20 @@
+version: '3'
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=0rd3rY0ur0wnF00d
+    ports:
+      - 1433:1433
+    volumes:
+      - db-data:/var/opt/mssql
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+volumes:
+  db-data:
