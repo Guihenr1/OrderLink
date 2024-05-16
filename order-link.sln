@@ -19,9 +19,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kitchen", "Kitchen", "{C418
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Core", "src\building-blocks\OrderLink.Sync.Core\OrderLink.Sync.Core.csproj", "{2F6E31C5-0F3D-4D17-8A1E-ECFF57D00250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Core", "src\building-blocks\OrderLink.Sync.Core\OrderLink.Sync.Core.csproj", "{2F6E31C5-0F3D-4D17-8A1E-ECFF57D00250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.MessageBus", "src\building-blocks\OrderLink.Sync.MessageBus\OrderLink.Sync.MessageBus.csproj", "{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.MessageBus", "src\building-blocks\OrderLink.Sync.MessageBus\OrderLink.Sync.MessageBus.csproj", "{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Api.Core", "src\building-blocks\OrderLink.Sync.Api.Core\OrderLink.Sync.Api.Core.csproj", "{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Api", "src\services\Kitchen\OrderLink.Sync.Kitchen.Api\OrderLink.Sync.Kitchen.Api.csproj", "{0236CFE5-A308-4464-AD60-6A00C39076E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Application", "src\services\Kitchen\OrderLink.Sync.Kitchen.Application\OrderLink.Sync.Kitchen.Application.csproj", "{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Domain", "src\services\Kitchen\OrderLink.Sync.Kitchen.Domain\OrderLink.Sync.Kitchen.Domain.csproj", "{E3A4949F-914E-4C3E-B87B-889463BC2D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Infrastructure", "src\services\Kitchen\OrderLink.Sync.Kitchen.Infrastructure\OrderLink.Sync.Kitchen.Infrastructure.csproj", "{067C9367-4638-465E-AE4B-3C32C1CCAB8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Api", "src\services\Order\OrderLink.Sync.Order.Api\OrderLink.Sync.Order.Api.csproj", "{4B0EF943-4CD8-4F98-9015-47B165DAAB46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Application", "src\services\Order\OrderLink.Sync.Order.Application\OrderLink.Sync.Order.Application.csproj", "{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Domain", "src\services\Order\OrderLink.Sync.Order.Domain\OrderLink.Sync.Order.Domain.csproj", "{E3DF433D-1063-42CE-ABDC-D8B037536B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Infrastructure", "src\services\Order\OrderLink.Sync.Order.Infrastructure\OrderLink.Sync.Order.Infrastructure.csproj", "{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +55,42 @@ Global
 		{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0236CFE5-A308-4464-AD60-6A00C39076E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0236CFE5-A308-4464-AD60-6A00C39076E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0236CFE5-A308-4464-AD60-6A00C39076E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0236CFE5-A308-4464-AD60-6A00C39076E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A4949F-914E-4C3E-B87B-889463BC2D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A4949F-914E-4C3E-B87B-889463BC2D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A4949F-914E-4C3E-B87B-889463BC2D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A4949F-914E-4C3E-B87B-889463BC2D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067C9367-4638-465E-AE4B-3C32C1CCAB8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067C9367-4638-465E-AE4B-3C32C1CCAB8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067C9367-4638-465E-AE4B-3C32C1CCAB8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067C9367-4638-465E-AE4B-3C32C1CCAB8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B0EF943-4CD8-4F98-9015-47B165DAAB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B0EF943-4CD8-4F98-9015-47B165DAAB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B0EF943-4CD8-4F98-9015-47B165DAAB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B0EF943-4CD8-4F98-9015-47B165DAAB46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DF433D-1063-42CE-ABDC-D8B037536B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DF433D-1063-42CE-ABDC-D8B037536B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DF433D-1063-42CE-ABDC-D8B037536B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DF433D-1063-42CE-ABDC-D8B037536B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +105,15 @@ Global
 		{65584B4B-CC82-4724-A8B2-C23E0AF7EB6C} = {E353BDE5-7DD2-4C23-8C83-8891E2477857}
 		{2F6E31C5-0F3D-4D17-8A1E-ECFF57D00250} = {2ED40F5D-A4C6-4FAD-8272-6C0BB6A50ED9}
 		{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE} = {7560E82A-C4CE-4FB8-B461-EB32325C5721}
+		{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77} = {4EEC7B8A-A080-40A2-A341-72D9096BC562}
+		{0236CFE5-A308-4464-AD60-6A00C39076E6} = {C4183DE8-47EF-44D4-A8A0-EEFE99C4D91F}
+		{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC} = {C4183DE8-47EF-44D4-A8A0-EEFE99C4D91F}
+		{E3A4949F-914E-4C3E-B87B-889463BC2D2E} = {C4183DE8-47EF-44D4-A8A0-EEFE99C4D91F}
+		{067C9367-4638-465E-AE4B-3C32C1CCAB8C} = {C4183DE8-47EF-44D4-A8A0-EEFE99C4D91F}
+		{4B0EF943-4CD8-4F98-9015-47B165DAAB46} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
+		{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
+		{E3DF433D-1063-42CE-ABDC-D8B037536B4E} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
+		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F274F855-708B-4043-B02D-15CA0D76D8EE}

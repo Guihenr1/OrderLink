@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrderLink.Sync.Core\OrderLink.Sync.Core.csproj" />
+    <ProjectReference Include="..\OrderLink.Sync.MessageBus\OrderLink.Sync.MessageBus.csproj" />
+  </ItemGroup>
+
 </Project>
