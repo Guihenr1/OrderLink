@@ -1,10 +1,10 @@
 ﻿namespace OrderLink.Sync.Core.Models
 {
-    public class EntityBase
+    public abstract class EntityBase
     {
-        public Guid Id { get; private set; }
-        public DateTime CreatedAt { get; private set; }
-        public DateTime UpdatedAt { get; private set; }
+        public Guid Id { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
 
         protected EntityBase()
         {

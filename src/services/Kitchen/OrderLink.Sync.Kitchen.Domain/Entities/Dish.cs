@@ -14,5 +14,12 @@ namespace OrderLink.Sync.Kitchen.Domain.Entities
             Name = name;
             Description = description;
         }
+
+        public Dish(Guid id, string name, string description)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+        }
     }
 }

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\building-blocks\OrderLink.Sync.Api.Core\OrderLink.Sync.Api.Core.csproj" />
     <ProjectReference Include="..\OrderLink.Sync.Kitchen.Infrastructure\OrderLink.Sync.Kitchen.Infrastructure.csproj" />
   </ItemGroup>
 

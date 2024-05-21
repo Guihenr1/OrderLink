@@ -81,9 +81,9 @@ public abstract class MainController : ControllerBase
             NotifyError(errorMsg);
         }
     }
+
     protected void NotifyError(string mensagem)
     {
         _notificator.Handle(new Notification(mensagem));
     }
-
 }

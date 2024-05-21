@@ -23,23 +23,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Core", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.MessageBus", "src\building-blocks\OrderLink.Sync.MessageBus\OrderLink.Sync.MessageBus.csproj", "{F3E3D0F5-F6E3-4F43-B2E7-4353F757ADAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Api.Core", "src\building-blocks\OrderLink.Sync.Api.Core\OrderLink.Sync.Api.Core.csproj", "{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Api.Core", "src\building-blocks\OrderLink.Sync.Api.Core\OrderLink.Sync.Api.Core.csproj", "{CCA2E333-2FDD-4140-8ECA-C381BDAD6C77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Api", "src\services\Kitchen\OrderLink.Sync.Kitchen.Api\OrderLink.Sync.Kitchen.Api.csproj", "{0236CFE5-A308-4464-AD60-6A00C39076E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Kitchen.Api", "src\services\Kitchen\OrderLink.Sync.Kitchen.Api\OrderLink.Sync.Kitchen.Api.csproj", "{0236CFE5-A308-4464-AD60-6A00C39076E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Application", "src\services\Kitchen\OrderLink.Sync.Kitchen.Application\OrderLink.Sync.Kitchen.Application.csproj", "{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Kitchen.Application", "src\services\Kitchen\OrderLink.Sync.Kitchen.Application\OrderLink.Sync.Kitchen.Application.csproj", "{468AEC03-0A0A-4FC6-8C44-87BBC44E95DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Domain", "src\services\Kitchen\OrderLink.Sync.Kitchen.Domain\OrderLink.Sync.Kitchen.Domain.csproj", "{E3A4949F-914E-4C3E-B87B-889463BC2D2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Kitchen.Domain", "src\services\Kitchen\OrderLink.Sync.Kitchen.Domain\OrderLink.Sync.Kitchen.Domain.csproj", "{E3A4949F-914E-4C3E-B87B-889463BC2D2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Infrastructure", "src\services\Kitchen\OrderLink.Sync.Kitchen.Infrastructure\OrderLink.Sync.Kitchen.Infrastructure.csproj", "{067C9367-4638-465E-AE4B-3C32C1CCAB8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Kitchen.Infrastructure", "src\services\Kitchen\OrderLink.Sync.Kitchen.Infrastructure\OrderLink.Sync.Kitchen.Infrastructure.csproj", "{067C9367-4638-465E-AE4B-3C32C1CCAB8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Api", "src\services\Order\OrderLink.Sync.Order.Api\OrderLink.Sync.Order.Api.csproj", "{4B0EF943-4CD8-4F98-9015-47B165DAAB46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Order.Api", "src\services\Order\OrderLink.Sync.Order.Api\OrderLink.Sync.Order.Api.csproj", "{4B0EF943-4CD8-4F98-9015-47B165DAAB46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Application", "src\services\Order\OrderLink.Sync.Order.Application\OrderLink.Sync.Order.Application.csproj", "{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Order.Application", "src\services\Order\OrderLink.Sync.Order.Application\OrderLink.Sync.Order.Application.csproj", "{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Domain", "src\services\Order\OrderLink.Sync.Order.Domain\OrderLink.Sync.Order.Domain.csproj", "{E3DF433D-1063-42CE-ABDC-D8B037536B4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Order.Domain", "src\services\Order\OrderLink.Sync.Order.Domain\OrderLink.Sync.Order.Domain.csproj", "{E3DF433D-1063-42CE-ABDC-D8B037536B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Infrastructure", "src\services\Order\OrderLink.Sync.Order.Infrastructure\OrderLink.Sync.Order.Infrastructure.csproj", "{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Order.Infrastructure", "src\services\Order\OrderLink.Sync.Order.Infrastructure\OrderLink.Sync.Order.Infrastructure.csproj", "{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2702760F-3D58-4C2E-A991-38CBA3D53FBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kitchen", "Kitchen", "{C1085862-3AC2-4176-BCA4-196C71D795B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Application.Tests", "src\tests\Kitchen\OrderLink.Sync.Kitchen.Application.Tests\OrderLink.Sync.Kitchen.Application.Tests.csproj", "{A92E5B84-868A-41F9-8FBB-22F1BA284121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +97,10 @@ Global
 		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +124,9 @@ Global
 		{8A395E18-1EF6-42DA-BC83-0BEC6C64FE6F} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
 		{E3DF433D-1063-42CE-ABDC-D8B037536B4E} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
 		{A9EC54AF-BD52-41F3-A9C9-799FC7F0560E} = {65584B4B-CC82-4724-A8B2-C23E0AF7EB6C}
+		{2702760F-3D58-4C2E-A991-38CBA3D53FBD} = {770B40CB-1BA2-46C5-90A0-F6378A2FB152}
+		{C1085862-3AC2-4176-BCA4-196C71D795B6} = {2702760F-3D58-4C2E-A991-38CBA3D53FBD}
+		{A92E5B84-868A-41F9-8FBB-22F1BA284121} = {C1085862-3AC2-4176-BCA4-196C71D795B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F274F855-708B-4043-B02D-15CA0D76D8EE}

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OrderLink.Sync.Kitchen.Application\OrderLink.Sync.Kitchen.Application.csproj" />
     <ProjectReference Include="..\OrderLink.Sync.Kitchen.Domain\OrderLink.Sync.Kitchen.Domain.csproj" />
   </ItemGroup>
 

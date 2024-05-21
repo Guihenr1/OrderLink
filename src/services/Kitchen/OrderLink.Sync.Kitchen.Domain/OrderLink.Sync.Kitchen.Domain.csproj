@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\building-blocks\OrderLink.Sync.Core\OrderLink.Sync.Core.csproj" />
   </ItemGroup>
 
