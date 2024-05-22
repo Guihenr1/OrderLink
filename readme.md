@@ -17,7 +17,7 @@ For architectural decisions, I chose to separate the Kitchen and Order modules t
 
 <details><summary><b>Show architecture decisions</b></summary>
 
-__Why Onion architecture?__ 
+__Onion architecture__ 
 
 I chose to use Onion Architecture because It is centered around the modularity, testability and the principle of dependency inversion.
 I separated in four layers:
@@ -30,14 +30,77 @@ I separated in four layers:
 
 * **Infrastructure:** Provide access to the database, external services and frameworks.
 
+
+__Repository Pattern__
+
+I created a class that is designed for an entity that inherits from EntityBase, generating the most commonly used database operations. This class provides an interface for operations while encapsulating the complexities of data access.
+The EntityBase is an abstract class that contains the common attributes of all entities and is used in Repository Pattern.
+You can find more details about REpository Pattern in my [article](https://medium.com/@guilherme.pomp/repository-design-pattern-in-net-core-1b050679c3a2).
+
+
 </details>
 
 ### Coding Practices
 
+Maintaining good practices in the code is crucial for keeping it scalable. You can see why I chose to use some of them in this section.
+
+<details><summary><b>Show code practices decisions</b></summary>
+
+__IEnumerable__
+
+I used to return a list from database because this interface provices a high level of abstraction It makes the code more flexible because you're not committing to a specific type of collection. Additionality, It's a read-only list that ensure the collection is not accidentally modified.
+
+__Notification Pattern__
+
+This provides a way to handle and communicate different types of messages, such as errors, information, and warnings, in a consistent and flexible manner within different parts of the code, thus avoiding indiscriminate use of exceptions.
+
+
+</details>
+
 ### Testing
+
+For testing, I am using the XUnit library.
+
+<details><summary><b>Show testing decisions</b></summary>
+
+__Testing and Code Coverage__
+I am testing the core logic with XUnit, aiming to achieve a high level of code coverage. I focus on testing the main logic, which comprises the critical points in the software.
+
+
+</details>
 
 ### Deployment 
 
+For local deployment, I am using Docker Compose.
+
+<details><summary><b>Show deployment decisions</b></summary>
+
+__Docker and Docker Compose__
+You can easily deploy using Docker Compose, which is configured to build the entire project environment, facilitating the deployment of SQL Server, RabbitMQ, and the project itself.
+
+
+</details>
+
 ### Infrastructure
 
+As Infrastructure as a Code, I am using Terraform.
+
+<details><summary><b>Show infrastructure decisions</b></summary>
+
+__Terraform__
+With one command, you can create the infrastructure to deploy in Azure. This allows for versioning and automates the infrastructure.
+
+
+</details>
+
 ### Tools
+
+I utilized some tools to enhance code quality.
+
+<details><summary><b>Show tools decisions</b></summary>
+
+__SonarQube__
+performs automatic reviews of code to detect bugs, code smells, and security vulnerabilities.
+
+
+</details>
