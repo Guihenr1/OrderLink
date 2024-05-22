@@ -64,6 +64,7 @@ For testing, I am using the XUnit library.
 <details><summary><b>Show testing decisions</b></summary>
 
 __Testing and Code Coverage__
+
 I am testing the core logic with XUnit, aiming to achieve a high level of code coverage. I focus on testing the main logic, which comprises the critical points in the software.
 
 
@@ -76,6 +77,7 @@ For local deployment, I am using Docker Compose.
 <details><summary><b>Show deployment decisions</b></summary>
 
 __Docker and Docker Compose__
+
 You can easily deploy using Docker Compose, which is configured to build the entire project environment, facilitating the deployment of SQL Server, RabbitMQ, and the project itself.
 
 
@@ -88,6 +90,7 @@ As Infrastructure as a Code, I am using Terraform.
 <details><summary><b>Show infrastructure decisions</b></summary>
 
 __Terraform__
+
 With one command, you can create the infrastructure to deploy in Azure. This allows for versioning and automates the infrastructure.
 
 
@@ -100,6 +103,7 @@ I utilized some tools to enhance code quality.
 <details><summary><b>Show tools decisions</b></summary>
 
 __SonarQube__
+
 performs automatic reviews of code to detect bugs, code smells, and security vulnerabilities.
 
 
