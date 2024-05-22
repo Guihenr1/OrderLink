@@ -17,18 +17,18 @@ For architectural decisions, I chose to separate the Kitchen and Order modules t
 
 <details><summary><b>Show architecture decisions</b></summary>
 
-### Why Onion architecture?
+__Why Onion architecture?__ 
 
 I chose to use Onion Architecture because It is centered around the modularity, testability and the principle of dependency inversion.
 I separated in four layers:
 
-* Presentation: Handle the interaction with the user with the input/output data.
+* **Presentation:** Handle the interaction with the user with the input/output data.
 
-* Application: Handle the operations of high level involving more than one agregate or entity domain and is responsible for handle the data came from the Kitchen throught the queue.
+* **Application:** Handle the operations of high level involving more than one agregate or entity domain and is responsible for handle the data came from the Kitchen throught the queue.
 
-* Domain: The core bunissess of the application. Represent the entities and interactions that handle these attributes.
+* **Domain:** The core bunissess of the application. Represent the entities and interactions that handle these attributes.
 
-* Infrastructure: Provide access to the database, external services and frameworks.
+* **Infrastructure:** Provide access to the database, external services and frameworks.
 
 </details>
 
