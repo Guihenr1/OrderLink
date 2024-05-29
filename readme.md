@@ -104,7 +104,7 @@ I utilized some tools to enhance code quality.
 
 __SonarQube__
 
-performs automatic reviews of code to detect bugs, code smells, and security vulnerabilities.
+Performs automatic reviews of code to detect bugs, code smells, and security vulnerabilities.
 
 
 </details>
