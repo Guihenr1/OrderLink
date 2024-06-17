@@ -45,7 +45,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2702760F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kitchen", "Kitchen", "{C1085862-3AC2-4176-BCA4-196C71D795B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Kitchen.Application.Tests", "src\tests\Kitchen\OrderLink.Sync.Kitchen.Application.Tests\OrderLink.Sync.Kitchen.Application.Tests.csproj", "{A92E5B84-868A-41F9-8FBB-22F1BA284121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Kitchen.Application.Tests", "src\tests\Kitchen\OrderLink.Sync.Kitchen.Application.Tests\OrderLink.Sync.Kitchen.Application.Tests.csproj", "{A92E5B84-868A-41F9-8FBB-22F1BA284121}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{CEC031FF-25E9-4539-9D8A-E2E176DF24EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Application.Tests", "src\tests\Order\OrderLink.Sync.Order.Application.Tests\OrderLink.Sync.Order.Application.Tests.csproj", "{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +105,10 @@ Global
 		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92E5B84-868A-41F9-8FBB-22F1BA284121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,6 +135,8 @@ Global
 		{2702760F-3D58-4C2E-A991-38CBA3D53FBD} = {770B40CB-1BA2-46C5-90A0-F6378A2FB152}
 		{C1085862-3AC2-4176-BCA4-196C71D795B6} = {2702760F-3D58-4C2E-A991-38CBA3D53FBD}
 		{A92E5B84-868A-41F9-8FBB-22F1BA284121} = {C1085862-3AC2-4176-BCA4-196C71D795B6}
+		{CEC031FF-25E9-4539-9D8A-E2E176DF24EE} = {2702760F-3D58-4C2E-A991-38CBA3D53FBD}
+		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6} = {CEC031FF-25E9-4539-9D8A-E2E176DF24EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F274F855-708B-4043-B02D-15CA0D76D8EE}

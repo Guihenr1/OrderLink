@@ -1,12 +1,12 @@
 ﻿using OrderLink.Sync.Core.Data;
 using OrderLink.Sync.Core.Models;
 using OrderLink.Sync.Core.Notifications;
-using OrderLink.Sync.Kitchen.Application.Interfaces.Repositories;
-using OrderLink.Sync.Kitchen.Application.Interfaces.Services;
-using OrderLink.Sync.Kitchen.Application.Services;
-using OrderLink.Sync.Kitchen.Infrastructure.Repositories;
+using OrderLink.Sync.Order.Application.Interfaces.Repositories;
+using OrderLink.Sync.Order.Application.Interfaces.Services;
+using OrderLink.Sync.Order.Application.Services;
+using OrderLink.Sync.Order.Infrastructure.Repositories;
 
-namespace OrderLink.Sync.Kitchen.Api.Configurations
+namespace OrderLink.Sync.Order.Api.Configuration
 {
     public static class DependencyInjectionConfig
     {
@@ -21,20 +21,19 @@ namespace OrderLink.Sync.Kitchen.Api.Configurations
 
         private static void Application(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddHttpFactoryConfiguration(configuration);
             services.AddScoped<INotificator, Notificator>();
         }
 
         private static void Services(this IServiceCollection services)
         {
-            services.AddScoped<IDishService, DishService>();
+            services.AddScoped<IOrderService, OrderService>();
         }
 
         private static void Repositories(this IServiceCollection services)
         {
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
-            services.AddScoped<IDishRepository, DishRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IOrderDishRepository, OrderDishRepository>();
         }
     }
 }

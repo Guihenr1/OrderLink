@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\building-blocks\OrderLink.Sync.Core\OrderLink.Sync.Core.csproj" />
+    <ProjectReference Include="..\OrderLink.Sync.Order.Application\OrderLink.Sync.Order.Application.csproj" />
     <ProjectReference Include="..\OrderLink.Sync.Order.Domain\OrderLink.Sync.Order.Domain.csproj" />
   </ItemGroup>
 

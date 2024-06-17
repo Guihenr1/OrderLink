@@ -4,12 +4,12 @@ namespace OrderLink.Sync.Order.Domain.Entities
 {
     public class Order : EntityBase
     {
-        public Guid DishId { get; private set; }
+        public Guid OrderId { get; private set; }
         public bool Done { get; private set; }
 
-        public Order(Guid dishId)
+        public Order(Guid orderId)
         {
-            DishId = dishId;
+            OrderId = orderId;
             Done = false;
         }
     }

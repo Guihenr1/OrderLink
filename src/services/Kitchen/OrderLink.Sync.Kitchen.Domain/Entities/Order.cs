@@ -8,8 +8,9 @@ namespace OrderLink.Sync.Kitchen.Domain.Entities
 
         public virtual ICollection<OrderDish> OrderDishes { get; set; }
 
-        public Order(string note)
+        public Order(Guid id, string note)
         {
+            Id = id;
             Note = note;
         }
     }   

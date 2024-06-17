@@ -9,7 +9,7 @@ namespace OrderLink.Sync.Order.Infrastructure.Mappings
         {
             builder.HasKey(d => d.Id);
 
-            builder.Property(d => d.DishId)
+            builder.Property(d => d.OrderId)
                 .IsRequired();
 
             builder.Property(d => d.Done)
@@ -21,7 +21,7 @@ namespace OrderLink.Sync.Order.Infrastructure.Mappings
             builder.Property(d => d.UpdatedAt)
                 .IsRequired();
 
-            builder.ToTable("Dishes");
+            builder.ToTable("Orders");
         }
     }
 }
