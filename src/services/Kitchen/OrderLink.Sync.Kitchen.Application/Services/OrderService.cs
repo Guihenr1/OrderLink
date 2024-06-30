@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
+using OrderLink.Sync.Core.Data;
 using OrderLink.Sync.Core.Models;
 using OrderLink.Sync.Core.Notifications;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Repositories;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Services;
-using OrderLink.Sync.Kitchen.Application.ViewModels.Dish;
+using OrderLink.Sync.Kitchen.Application.ViewModels.Order;
+using OrderLink.Sync.Kitchen.Application.ViewModels.OrderDish;
+using System.Transactions;
 
 namespace OrderLink.Sync.Kitchen.Application.Services
 {
@@ -11,19 +14,67 @@ namespace OrderLink.Sync.Kitchen.Application.Services
     {
         private readonly ILogger<OrderService> _logger;
         private readonly IOrderRepository _orderRepository;
+        private readonly IDishService _dishService;
+        private readonly IOrderDishService _orderDishService;
         public OrderService(ILogger<OrderService> logger,
             INotificator notificator, 
-            IOrderRepository orderRepository) : base(notificator)
+            IOrderRepository orderRepository,
+            IDishService dishService,
+            IOrderDishService orderDishService) : base(notificator)
         {
             _logger = logger;
             _orderRepository = orderRepository;
+            _dishService = dishService;
+            _orderDishService = orderDishService;
         }
 
         public async Task CreateOrderAsync(OrderRequestViewModel orderRequestViewModel)
         {
-            var id = Guid.NewGuid();
+            _logger.LogInformation("Creating order");
+            
+            if (!await CheckDishesExist(orderRequestViewModel.Dishes))
+            {
+                return;
+            }
 
-            await _orderRepository.AddAsync(orderRequestViewModel.ToEntity(id));
+            using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            {
+                try
+                {
+                    await _orderRepository.AddAsync(orderRequestViewModel.ToEntity());
+
+                    foreach (var dishId in orderRequestViewModel.Dishes)
+                    {
+                        await _orderDishService.AddAsync(new OrderDishViewModel
+                        {
+                            OrderId = orderRequestViewModel.Id,
+                            DishId = dishId
+                        });
+                    }
+
+                    scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error creating order");
+                    throw;
+                }
+            }
+        }
+
+        private async Task<bool> CheckDishesExist(IEnumerable<Guid> dishIds)
+        {
+            var dishes = await _dishService.GetAllAsync();
+
+            var invalidDishes = dishIds.Where(dishId => !dishes.Any(dish => dish.Id == dishId));
+
+            if (invalidDishes.Any())
+            {
+                _logger.LogError("Dishes not found: {Dishes}", string.Join(", ", invalidDishes));
+                return false;
+            }
+
+            return true;
         }
     }
 }

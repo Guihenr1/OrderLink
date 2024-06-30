@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\building-blocks\OrderLink.Sync.Core\OrderLink.Sync.Core.csproj" />
+    <ProjectReference Include="..\..\..\building-blocks\OrderLink.Sync.MessageBus\OrderLink.Sync.MessageBus.csproj" />
     <ProjectReference Include="..\OrderLink.Sync.Order.Domain\OrderLink.Sync.Order.Domain.csproj" />
   </ItemGroup>
 

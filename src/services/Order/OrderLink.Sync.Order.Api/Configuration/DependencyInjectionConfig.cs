@@ -28,6 +28,7 @@ namespace OrderLink.Sync.Order.Api.Configuration
         private static void Services(this IServiceCollection services)
         {
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IInvokeService, InvokeService>();
         }
 
         private static void Repositories(this IServiceCollection services)

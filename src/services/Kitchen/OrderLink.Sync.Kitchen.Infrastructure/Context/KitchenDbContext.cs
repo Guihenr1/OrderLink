@@ -1,12 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using OrderLink.Sync.Core.Data;
 using OrderLink.Sync.Kitchen.Domain.Entities;
 using OrderLink.Sync.Kitchen.Infrastructure.Mappings;
+using Polly;
 
 namespace OrderLink.Sync.Kitchen.Infrastructure.Context
 {
     public class KitchenDbContext : DbContext, IUnitOfWork
     {
+        private IDbContextTransaction _transaction;
+
         public KitchenDbContext(DbContextOptions<KitchenDbContext> options) : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;

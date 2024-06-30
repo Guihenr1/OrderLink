@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using OrderLink.Sync.Core.Data;
 using OrderLink.Sync.Order.Infrastructure.Mappings;
 
@@ -6,6 +7,8 @@ namespace OrderLink.Sync.Order.Infrastructure.Context
 {
     public class OrderDbContext : DbContext, IUnitOfWork
     {
+        private IDbContextTransaction _transaction;
+
         public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;

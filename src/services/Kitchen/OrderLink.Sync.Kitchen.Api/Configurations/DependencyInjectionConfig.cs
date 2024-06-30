@@ -4,6 +4,7 @@ using OrderLink.Sync.Core.Notifications;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Repositories;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Services;
 using OrderLink.Sync.Kitchen.Application.Services;
+using OrderLink.Sync.Kitchen.Infrastructure.Context;
 using OrderLink.Sync.Kitchen.Infrastructure.Repositories;
 
 namespace OrderLink.Sync.Kitchen.Api.Configurations
@@ -27,6 +28,9 @@ namespace OrderLink.Sync.Kitchen.Api.Configurations
         private static void Services(this IServiceCollection services)
         {
             services.AddScoped<IDishService, DishService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderDishService, OrderDishService>();
+
         }
 
         private static void Repositories(this IServiceCollection services)
@@ -35,6 +39,7 @@ namespace OrderLink.Sync.Kitchen.Api.Configurations
             services.AddScoped<IDishRepository, DishRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderDishRepository, OrderDishRepository>();
+            services.AddScoped<IConsumerOrderService, ConsumerOrderService>();
         }
     }
 }

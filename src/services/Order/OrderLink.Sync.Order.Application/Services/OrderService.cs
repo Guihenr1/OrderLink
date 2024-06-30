@@ -1,4 +1,5 @@
-﻿using OrderLink.Sync.Core.Models;
+﻿using OrderLink.Sync.Core.Messages.Integration.Events;
+using OrderLink.Sync.Core.Models;
 using OrderLink.Sync.Core.Notifications;
 using OrderLink.Sync.Order.Application.Interfaces.Repositories;
 using OrderLink.Sync.Order.Application.Interfaces.Services;
@@ -10,11 +11,15 @@ namespace OrderLink.Sync.Order.Application.Services
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IOrderRepository _orderRepository;
-        public OrderService(IHttpClientFactory httpClientFactory, IOrderRepository orderRepository,
-                            INotificator notificator) : base(notificator)
+        private readonly IInvokeService _invokeService;
+        public OrderService(IHttpClientFactory httpClientFactory, 
+                IOrderRepository orderRepository,
+                INotificator notificator,
+                IInvokeService invokeService) : base(notificator)
         {
             _httpClientFactory = httpClientFactory;
             _orderRepository = orderRepository;
+            _invokeService = invokeService;
         }
 
         public async Task<IEnumerable<DishViewModelData>> GetAllDishesAsync()
@@ -40,7 +45,11 @@ namespace OrderLink.Sync.Order.Application.Services
 
         public async Task AddAsync(OrderRequestViewModel orderViewModel)
         {
-            await _orderRepository.AddAsync(new Domain.Entities.Order(Guid.NewGuid()));
+            var orderId = Guid.NewGuid();
+
+            await _invokeService.CreateOrderAsync(new CreateOrderEvent(orderId, orderViewModel.DisheIds, orderViewModel.Note));
+
+            await _orderRepository.AddAsync(new Domain.Entities.Order(orderId));
         }
     }
 }
