@@ -38,5 +38,19 @@ namespace OrderLink.Sync.Kitchen.Api.V1.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var orders = await _orderService.GetAllAsync();
+                return CustomResponse(orders);
+            } catch (Exception ex)
+            {
+                _logger.LogCritical(ex.Message);
+                return BadRequest();
+            }
+        }
     }
 }

@@ -62,6 +62,24 @@ namespace OrderLink.Sync.Kitchen.Application.Services
             }
         }
 
+        public async Task<IEnumerable<GetAllOrderResponseViewModel>> GetAllAsync()
+        {
+            var orders = await _orderRepository.GetAllOrdersWithOrderDishesAsync();
+
+            return orders.Select(order => new GetAllOrderResponseViewModel
+            {
+                Id = order.Id,
+                Note = order.Note,
+                CreatedAt = order.CreatedAt,
+                Dishes = order.OrderDishes.Select(orderDish => new GetAllDishesResponseViewModel
+                {
+                    Id = orderDish.Dish.Id,
+                    Name = orderDish.Dish.Name,
+                    Description = orderDish.Dish.Description
+                }).ToList()
+            });
+        }
+
         private async Task<bool> CheckDishesExist(IEnumerable<Guid> dishIds)
         {
             var dishes = await _dishService.GetAllAsync();

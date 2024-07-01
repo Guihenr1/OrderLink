@@ -1,4 +1,5 @@
-﻿using OrderLink.Sync.Core.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderLink.Sync.Core.Data;
 using OrderLink.Sync.Core.Models;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Repositories;
 using OrderLink.Sync.Kitchen.Domain.Entities;
@@ -16,5 +17,14 @@ namespace OrderLink.Sync.Kitchen.Infrastructure.Repositories
         }
 
         public IUnitOfWork UnitOfWork => _context;
+
+        public async Task<IEnumerable<Order>> GetAllOrdersWithOrderDishesAsync()
+        {
+            return await _context.Orders
+                .Include(o => o.OrderDishes)
+                .ThenInclude(od => od.Dish)
+                .OrderBy(o => o.CreatedAt)
+                .ToListAsync();
+        }
     }
 }
