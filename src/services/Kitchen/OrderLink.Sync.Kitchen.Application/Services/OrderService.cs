@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrderLink.Sync.Core.Data;
+using OrderLink.Sync.Core.Messages.Integration.Events;
 using OrderLink.Sync.Core.Models;
 using OrderLink.Sync.Core.Notifications;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Repositories;
@@ -16,16 +16,19 @@ namespace OrderLink.Sync.Kitchen.Application.Services
         private readonly IOrderRepository _orderRepository;
         private readonly IDishService _dishService;
         private readonly IOrderDishService _orderDishService;
+        private readonly IInvokeService _invokeService;
         public OrderService(ILogger<OrderService> logger,
             INotificator notificator, 
             IOrderRepository orderRepository,
             IDishService dishService,
-            IOrderDishService orderDishService) : base(notificator)
+            IOrderDishService orderDishService,
+            IInvokeService invokeService) : base(notificator)
         {
             _logger = logger;
             _orderRepository = orderRepository;
             _dishService = dishService;
             _orderDishService = orderDishService;
+            _invokeService = invokeService;
         }
 
         public async Task CreateOrderAsync(OrderRequestViewModel orderRequestViewModel)
@@ -60,6 +63,11 @@ namespace OrderLink.Sync.Kitchen.Application.Services
                     throw;
                 }
             }
+        }
+
+        public async Task DoneDishAsync(Guid orderId)
+        {
+            await _invokeService.DoneOrderAsync(new DoneOrderEvent(orderId));
         }
 
         public async Task<IEnumerable<GetAllOrderResponseViewModel>> GetAllAsync()

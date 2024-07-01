@@ -6,5 +6,6 @@ namespace OrderLink.Sync.Kitchen.Application.Interfaces.Services
     {
         Task CreateOrderAsync(OrderRequestViewModel orderRequestViewModel);
         Task<IEnumerable<GetAllOrderResponseViewModel>> GetAllAsync();
+        Task DoneDishAsync(Guid orderId);
     }
 }

@@ -52,5 +52,19 @@ namespace OrderLink.Sync.Kitchen.Api.V1.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPut("done-order/{id}")]
+        public async Task<IActionResult> Done(Guid id)
+        {
+            try
+            {
+                await _orderService.DoneDishAsync(id);
+                return CustomResponse();
+            } catch (Exception ex)
+            {
+                _logger.LogCritical(ex.Message);
+                return BadRequest();
+            }
+        }
     }
 }

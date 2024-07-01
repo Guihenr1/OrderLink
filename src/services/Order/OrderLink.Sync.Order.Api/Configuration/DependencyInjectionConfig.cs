@@ -29,6 +29,7 @@ namespace OrderLink.Sync.Order.Api.Configuration
         {
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IInvokeService, InvokeService>();
+            services.AddScoped<IConsumerOrderService, ConsumerOrderService>();
         }
 
         private static void Repositories(this IServiceCollection services)

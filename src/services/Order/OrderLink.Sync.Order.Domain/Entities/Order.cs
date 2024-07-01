@@ -12,5 +12,10 @@ namespace OrderLink.Sync.Order.Domain.Entities
             OrderId = orderId;
             Done = false;
         }
+
+        public void DoneOrder()
+        {
+            Done = true;
+        }
     }
 }

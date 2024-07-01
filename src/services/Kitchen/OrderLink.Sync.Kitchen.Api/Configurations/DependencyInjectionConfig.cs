@@ -30,7 +30,7 @@ namespace OrderLink.Sync.Kitchen.Api.Configurations
             services.AddScoped<IDishService, DishService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderDishService, OrderDishService>();
-
+            services.AddScoped<IInvokeService, InvokeService>();
         }
 
         private static void Repositories(this IServiceCollection services)

@@ -51,5 +51,20 @@ namespace OrderLink.Sync.Order.Application.Services
 
             await _orderRepository.AddAsync(new Domain.Entities.Order(orderId));
         }
+
+        public async Task DoneOrderAsync(Guid id)
+        {
+            var order = await _orderRepository.GetByOrderIdAsync(id);
+
+            if (order == null)
+            {
+                Notify("Order not found");
+                return;
+            }
+
+            order.DoneOrder();
+
+            _orderRepository.Update(order);
+        }
     }
 }
