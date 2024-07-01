@@ -4,11 +4,6 @@ using Microsoft.Extensions.Hosting;
 using OrderLink.Sync.Core.Messages.Integration.Events;
 using OrderLink.Sync.Kitchen.Application.Interfaces.Services;
 using OrderLink.Sync.MessageBus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrderLink.Sync.Kitchen.Application.Handlers
 {
