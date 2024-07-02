@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
 using Moq.Protected;
+using OrderLink.Sync.Core.Messages.Integration.Events;
 using OrderLink.Sync.Core.Notifications;
 using OrderLink.Sync.Order.Application.Interfaces.Repositories;
 using OrderLink.Sync.Order.Application.Interfaces.Services;
@@ -118,6 +119,52 @@ namespace OrderLink.Sync.Order.Application.Tests.Services
             // Assert
             Assert.Null(result);
             _httpClientFactory.Verify(f => f.CreateClient(nameof(OrderService)), Times.Once);
+        }
+
+        [Fact]
+        public async Task AddAsync_WhenInvokeServiceCreateOrderAsyncIsCalled_ShouldAddOrder()
+        {
+            // Arrange
+            var orderViewModel = new OrderRequestViewModel
+            {
+                DisheIds = new List<Guid> { Guid.NewGuid() },
+                Note = "Order Note"
+            };
+
+            // Act
+            await _orderService.AddAsync(orderViewModel);
+
+            // Assert
+            _invokeService.Verify(i => i.CreateOrderAsync(It.IsAny<CreateOrderEvent>()), Times.Once);
+            _orderRepository.Verify(r => r.AddAsync(It.IsAny<Domain.Entities.Order>()), Times.Once);
+        }
+
+        [Fact]
+        public async Task DoneOrderAsync_WhenOrderNotFound_ShouldNotify()
+        {
+            // Arrange
+            var orderId = Guid.NewGuid();
+            _orderRepository.Setup(r => r.GetByOrderIdAsync(orderId));
+
+            // Act
+            await _orderService.DoneOrderAsync(orderId);
+
+            // Assert
+            _orderRepository.Verify(r => r.Update(It.IsAny<Domain.Entities.Order>()), Times.Never);
+        }
+
+        [Fact]
+        public async Task DoneOrderAsync_WhenOrderFound_ShouldUpdateOrder()
+        {
+            // Arrange
+            var orderId = Guid.NewGuid();
+            _orderRepository.Setup(r => r.GetByOrderIdAsync(orderId)).ReturnsAsync(new Domain.Entities.Order(orderId));
+
+            // Act
+            await _orderService.DoneOrderAsync(orderId);
+
+            // Assert
+            _orderRepository.Verify(r => r.Update(It.IsAny<Domain.Entities.Order>()), Times.Once);
         }
     }
 }
