@@ -123,6 +123,7 @@ public class MessageBus : IMessageBus
     {
         public void Dispose()
         {
+            throw new NotSupportedException();
         }
 
         public AckStrategy HandleConsumerError(ConsumerExecutionContext context, Exception exception)
