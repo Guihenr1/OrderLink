@@ -7,7 +7,7 @@ using OrderLink.Sync.Kitchen.Application.ViewModels.Order;
 namespace OrderLink.Sync.Kitchen.Api.V1.Controllers
 {
     [ApiVersion("1.0")]
-    [Route("api/v1/order")]
+    [Route("api/v1/kitchen/order")]
     public class OrderController : MainController
     {
         private readonly ILogger<OrderController> _logger;

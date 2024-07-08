@@ -7,7 +7,7 @@ using OrderLink.Sync.Kitchen.Application.ViewModels.Dish;
 namespace OrderLink.Sync.Kitchen.Api.V1.Controllers
 {
     [ApiVersion("1.0")]
-    [Route("api/v1/dish")]
+    [Route("api/v1/kitchen/dish")]
     public class DishController : MainController
     {
         private readonly ILogger<DishController> _logger;

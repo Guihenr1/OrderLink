@@ -24,7 +24,7 @@ namespace OrderLink.Sync.Order.Application.Services
 
         public async Task<IEnumerable<DishViewModelData>> GetAllDishesAsync()
         {
-            var response = await _httpClientFactory.CreateClient(nameof(OrderService)).GetAsync("api/v1/dish");
+            var response = await _httpClientFactory.CreateClient(nameof(OrderService)).GetAsync("api/v1/kitchen/dish");
 
             if (!response.IsSuccessStatusCode)
             {

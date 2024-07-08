@@ -49,7 +49,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Kitchen.Appl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{CEC031FF-25E9-4539-9D8A-E2E176DF24EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Order.Application.Tests", "src\tests\Order\OrderLink.Sync.Order.Application.Tests\OrderLink.Sync.Order.Application.Tests.csproj", "{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderLink.Sync.Order.Application.Tests", "src\tests\Order\OrderLink.Sync.Order.Application.Tests\OrderLink.Sync.Order.Application.Tests.csproj", "{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{BE2DD8E4-A422-44BA-B313-F8B610D5F891}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sync", "Sync", "{5699F27C-0DF9-4DB3-98C3-04BF3693A7B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLink.Sync.Gateway.Api", "src\api-gateway\OrderLink.Sync.Gateway.Api\OrderLink.Sync.Gateway.Api.csproj", "{603D832C-0677-4871-BCE6-4C08F62B1B1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +115,10 @@ Global
 		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{603D832C-0677-4871-BCE6-4C08F62B1B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{603D832C-0677-4871-BCE6-4C08F62B1B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{603D832C-0677-4871-BCE6-4C08F62B1B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{603D832C-0677-4871-BCE6-4C08F62B1B1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +147,9 @@ Global
 		{A92E5B84-868A-41F9-8FBB-22F1BA284121} = {C1085862-3AC2-4176-BCA4-196C71D795B6}
 		{CEC031FF-25E9-4539-9D8A-E2E176DF24EE} = {2702760F-3D58-4C2E-A991-38CBA3D53FBD}
 		{375F17F1-B4DB-496E-BA72-EA91F3A33BB6} = {CEC031FF-25E9-4539-9D8A-E2E176DF24EE}
+		{BE2DD8E4-A422-44BA-B313-F8B610D5F891} = {770B40CB-1BA2-46C5-90A0-F6378A2FB152}
+		{5699F27C-0DF9-4DB3-98C3-04BF3693A7B8} = {BE2DD8E4-A422-44BA-B313-F8B610D5F891}
+		{603D832C-0677-4871-BCE6-4C08F62B1B1F} = {5699F27C-0DF9-4DB3-98C3-04BF3693A7B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F274F855-708B-4043-B02D-15CA0D76D8EE}
