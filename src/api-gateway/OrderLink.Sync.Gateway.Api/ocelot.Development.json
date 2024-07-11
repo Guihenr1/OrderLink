@@ -113,7 +113,7 @@
     },
     {
       "UpstreamPathTemplate": "/gateway/order/get-all-dishes",
-      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/v1/order/get-all-dishes",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
