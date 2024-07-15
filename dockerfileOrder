@@ -1,0 +1,49 @@
+# First stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY *.sln .
+COPY src/api-gateway/OrderLink.Sync.Gateway.Api/*.csproj ./src/api-gateway/OrderLink.Sync.Gateway.Api/
+
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Api/*.csproj ./src/services/Kitchen/OrderLink.Sync.Kitchen.Api/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Application/*.csproj ./src/services/Kitchen/OrderLink.Sync.Kitchen.Application/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Domain/*.csproj ./src/services/Kitchen/OrderLink.Sync.Kitchen.Domain/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Infrastructure/*.csproj ./src/services/Kitchen/OrderLink.Sync.Kitchen.Infrastructure/
+
+COPY src/services/Order/OrderLink.Sync.Order.Api/*.csproj ./src/services/Order/OrderLink.Sync.Order.Api/
+COPY src/services/Order/OrderLink.Sync.Order.Application/*.csproj ./src/services/Order/OrderLink.Sync.Order.Application/
+COPY src/services/Order/OrderLink.Sync.Order.Domain/*.csproj ./src/services/Order/OrderLink.Sync.Order.Domain/
+COPY src/services/Order/OrderLink.Sync.Order.Infrastructure/*.csproj ./src/services/Order/OrderLink.Sync.Order.Infrastructure/
+
+COPY src/tests/Kitchen/OrderLink.Sync.Kitchen.Application.Tests/*.csproj ./src/tests/Kitchen/OrderLink.Sync.Kitchen.Application.Tests/
+COPY src/tests/Order/OrderLink.Sync.Order.Application.Tests/*.csproj ./src/tests/Order/OrderLink.Sync.Order.Application.Tests/
+
+COPY src/building-blocks/OrderLink.Sync.Api.Core/*.csproj ./src/building-blocks/OrderLink.Sync.Api.Core/
+COPY src/building-blocks/OrderLink.Sync.Core/*.csproj ./src/building-blocks/OrderLink.Sync.Core/
+COPY src/building-blocks/OrderLink.Sync.MessageBus/*.csproj ./src/building-blocks/OrderLink.Sync.MessageBus/
+RUN dotnet restore
+
+# Copy everything else and build website
+COPY src/api-gateway/OrderLink.Sync.Gateway.Api/. ./src/api-gateway/OrderLink.Sync.Gateway.Api/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Api/. ./src/services/Kitchen/OrderLink.Sync.Kitchen.Api/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Application/. ./src/services/Kitchen/OrderLink.Sync.Kitchen.Application/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Domain/. ./src/services/Kitchen/OrderLink.Sync.Kitchen.Domain/
+COPY src/services/Kitchen/OrderLink.Sync.Kitchen.Infrastructure/. ./src/services/Kitchen/OrderLink.Sync.Kitchen.Infrastructure/
+COPY src/services/Order/OrderLink.Sync.Order.Api/. ./src/services/Order/OrderLink.Sync.Order.Api/
+COPY src/services/Order/OrderLink.Sync.Order.Application/. ./src/services/Order/OrderLink.Sync.Order.Application/
+COPY src/services/Order/OrderLink.Sync.Order.Domain/. ./src/services/Order/OrderLink.Sync.Order.Domain/
+COPY src/services/Order/OrderLink.Sync.Order.Infrastructure/. ./src/services/Order/OrderLink.Sync.Order.Infrastructure/
+COPY src/tests/Kitchen/OrderLink.Sync.Kitchen.Application.Tests/. ./src/tests/Kitchen/OrderLink.Sync.Kitchen.Application.Tests/
+COPY src/tests/Order/OrderLink.Sync.Order.Application.Tests/. ./src/tests/Order/OrderLink.Sync.Order.Application.Tests/
+COPY src/building-blocks/OrderLink.Sync.Api.Core/. ./src/building-blocks/OrderLink.Sync.Api.Core/
+COPY src/building-blocks/OrderLink.Sync.Core/. ./src/building-blocks/OrderLink.Sync.Core/
+COPY src/building-blocks/OrderLink.Sync.MessageBus/. ./src/building-blocks/OrderLink.Sync.MessageBus/
+WORKDIR /app/src/services/Order/OrderLink.Sync.Order.Api
+RUN dotnet publish -c release -o /app/publish
+
+# Final stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "OrderLink.Sync.Order.Api.dll"]

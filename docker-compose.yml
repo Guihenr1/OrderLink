@@ -43,6 +43,38 @@ services:
       - sonar_db:/var/lib/postgresql
       - sonar_db_data:/var/lib/postgresql/data
 
+  apigate:
+    build:
+      context: .
+      dockerfile: dockerfileGateway
+    image: api_gateway:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - sql-server
+      - rabbitmq
+      - sonarqube
+
+  kitchen:
+    build:
+      context: .
+      dockerfile: dockerfileKitchen
+    image: kitchen_image:latest
+    depends_on:
+      - sql-server
+      - rabbitmq
+      - sonarqube
+
+  order:
+    build:
+      context: .
+      dockerfile: dockerfileOrder
+    image: order_image:latest
+    depends_on:
+      - sql-server
+      - rabbitmq
+      - sonarqube
+
 volumes:
   db-data:
   sonarqube_conf:
