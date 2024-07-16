@@ -10,8 +10,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -22,8 +22,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -34,8 +34,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -46,8 +46,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -58,8 +58,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -70,8 +70,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -82,8 +82,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -94,8 +94,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5025
+          "Host": "kitchen",
+          "Port": 8080
         }
       ]
     },
@@ -106,8 +106,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5003
+          "Host": "order",
+          "Port": 8080
         }
       ]
     },
@@ -118,8 +118,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5003
+          "Host": "order",
+          "Port": 8080
         }
       ]
     }

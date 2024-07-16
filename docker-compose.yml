@@ -49,17 +49,25 @@ services:
       dockerfile: dockerfileGateway
     image: api_gateway:latest
     ports:
-      - 8080:8080
+      - 5005:8080
+    links:
+      - kitchen
+      - order
     depends_on:
       - sql-server
       - rabbitmq
       - sonarqube
+      - kitchen
+      - order
 
   kitchen:
     build:
       context: .
       dockerfile: dockerfileKitchen
+    hostname: kitchen
     image: kitchen_image:latest
+    links:
+      - order
     depends_on:
       - sql-server
       - rabbitmq
@@ -69,7 +77,10 @@ services:
     build:
       context: .
       dockerfile: dockerfileOrder
+    hostname: order
     image: order_image:latest
+    links:
+      - kitchen
     depends_on:
       - sql-server
       - rabbitmq
