@@ -8,5 +8,4 @@ variable "resource_group_location" {
   description = "The location to create the resource group in"
   type        = string
   default     = "Central US"
-
 }
