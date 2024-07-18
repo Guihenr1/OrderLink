@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using OrderLink.Sync.Kitchen.Api.Configurations;
+using OrderLink.Sync.Kitchen.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,5 +26,11 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<KitchenDbContext>(); 
+    dbContext.Database.Migrate();
+}
 
 app.Run();

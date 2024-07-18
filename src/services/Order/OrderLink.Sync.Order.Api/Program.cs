@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using OrderLink.Sync.Order.Api.Configuration;
+using OrderLink.Sync.Order.Infrastructure.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,5 +26,11 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<OrderDbContext>();
+    dbContext.Database.Migrate();
+}
 
 app.Run();

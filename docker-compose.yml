@@ -66,8 +66,8 @@ services:
       dockerfile: dockerfileKitchen
     hostname: kitchen
     image: kitchen_image:latest
-    links:
-      - order
+    ports:
+      - 8080:8080
     depends_on:
       - sql-server
       - rabbitmq
@@ -79,8 +79,6 @@ services:
       dockerfile: dockerfileOrder
     hostname: order
     image: order_image:latest
-    links:
-      - kitchen
     depends_on:
       - sql-server
       - rabbitmq
