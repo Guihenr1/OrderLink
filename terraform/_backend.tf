@@ -16,3 +16,7 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+provider "http" {}
+
+provider "random" {}

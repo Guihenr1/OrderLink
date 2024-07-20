@@ -122,6 +122,18 @@
           "Port": 5000
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/order/get-all-orders",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/v1/order/get-all-orders",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ]
     }
   ]
 }

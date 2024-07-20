@@ -55,5 +55,22 @@ namespace OrderLink.Sync.Order.Api.V1.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpGet("get-all-orders")]
+        public async Task<IActionResult> GetAllOrders()
+        {
+            try
+            {
+                if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+                var result = await _orderService.GetAllOrdersAsync();
+
+                return CustomResponse(result);
+            } catch (Exception ex)
+            {
+                _logger.LogCritical(ex.Message);
+                return BadRequest();
+            }
+        }
     }
 }

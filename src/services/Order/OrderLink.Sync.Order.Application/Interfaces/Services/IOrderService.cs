@@ -9,5 +9,7 @@ namespace OrderLink.Sync.Order.Application.Interfaces.Services
         Task<IEnumerable<DishViewModelData>> GetAllDishesAsync();
 
         Task DoneOrderAsync(Guid id);
+
+        Task<IEnumerable<OrderResponseViewModel>> GetAllOrdersAsync();
     }
 }

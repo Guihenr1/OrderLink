@@ -66,5 +66,17 @@ namespace OrderLink.Sync.Order.Application.Services
 
             _orderRepository.Update(order);
         }
+
+        public async Task<IEnumerable<OrderResponseViewModel>> GetAllOrdersAsync()
+        {
+            var orders = await _orderRepository.GetAllAsync();
+
+            return orders.Select(order => new OrderResponseViewModel
+            {
+                Id = order.Id,
+                OrderId = order.OrderId,
+                Done = order.Done
+            });
+        }
     }
 }

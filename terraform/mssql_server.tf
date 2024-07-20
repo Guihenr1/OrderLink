@@ -6,3 +6,10 @@ resource "azurerm_mssql_server" "order-link-api" {
   administrator_login_password = "0rd3rY0ur0wnF00d"
   version                      = "12.0"
 }
+
+resource "azurerm_mssql_firewall_rule" "order-link-api" {
+  name             = "AllowMyIP"
+  server_id        = azurerm_mssql_server.order-link-api.id
+  start_ip_address = chomp(data.http.my_ip.response_body)
+  end_ip_address   = chomp(data.http.my_ip.response_body)
+}
